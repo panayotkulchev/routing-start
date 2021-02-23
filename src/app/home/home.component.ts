@@ -14,8 +14,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLoadServers() {
+  onLoadServers(id: number) {
     // complex calculations
-    this.router.navigate(['/servers']).then();
+    this.router.navigate(
+      ['/servers', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'}).then();
   }
 }
